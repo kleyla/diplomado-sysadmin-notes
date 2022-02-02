@@ -5,7 +5,9 @@ De la familia de REd hat
 - Al parecer no hay algo como apt-fast
 
 ```
-sudo yum list update
+// actualiza los repos
+sudo yum list updates
+// actualiza los paquetes
 sudo yum update
 ```
 
@@ -15,7 +17,7 @@ Cambiar la interfaz de red
 sudo nmtui
 ```
 
-PAra reiniciar
+Para reiniciar
 
 ```
 shutdown -r now
@@ -23,23 +25,26 @@ shutdown -r now
 
 ## 1.3 Cambiar niveles de ejecucion/objetivos de arrancar y apagar o reiniciaer el sistema
 
-0-6
+Los niveles qie existen son del 0 al 6
 
-Que nivel de ejecucion
+para ver el nivel de ejecucion
 
 ```
 runlevel
-// unbuntu N 5
+// ubuntu server N 5
 // rocky N 3
 ```
 
-Es el manejador por defecto de recursos y servicios del sistema -> iniciar apagr interrumpir
+**systemd**
+
+Es el manejador por defecto de recursos y servicios del sistema -> iniciar apagar interrumpir
 
 ```
 systemd
 systemd start unit.service
 service ssh status // nomenclatura antigua
 /etc/init.d/ssh status // mas antigua no en rocky
+systemctl status ssh
 ```
 
 Herencia de nomenclatura antigua
@@ -56,7 +61,7 @@ Para cambiar de nivel: Si tienes un problemas una opcion es bajar de nivel y lue
 telinit 1 // cambiar al level 1
 ```
 
-PAra apagar:
+Para apagar:
 
 ```
 shutdown // forma amable de decir que terminen y se apaguen
