@@ -102,6 +102,8 @@ Ubicaciones para librerias compartidad:
 `/usr/lib`
 `/usr/local/lib`
 
+Aqui podemos agregar una libreria nueva:
+
 `/etc/ld.so.conf.d/*.conf`
 
 Comando para ver los archivos de configuracion:
@@ -109,7 +111,13 @@ Comando para ver los archivos de configuracion:
 ```
 ldconfig
 sudo ldconfig -v
-sudo ldconfig -p
+sudo ldconfig -p // las almacenadas en chache
 ```
 
 - Diferencia demonio y servicio
+
+## Buscando lad dependecias de un ejecutable
+
+```
+ldd /usr/bin/git
+```

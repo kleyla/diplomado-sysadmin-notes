@@ -7,6 +7,10 @@ http://mundo.openit.com.bo/?p=1213
 
 Para modificar la red:
 
+https://github.com/joseafon/netplan-easy
+
+https://github.com/ilikenwf/apt-fast
+
 ```
 cat /etc/netplan/00-installer-config.yaml
 ```
