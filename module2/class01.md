@@ -35,7 +35,7 @@ modprobe -r snd-hda-intel
 /proc/cpuinfo // info detallada del cpu
 /proc/interrumpts // 
 /proc/ioports //
-/proc/dma // enumera los canales de acceso directo a memoria
+/proc/dma // enumera los canales de `acceso directo a memoria
 ```
 
 Enfocado a almacenamiento
