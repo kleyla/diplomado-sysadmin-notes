@@ -6,4 +6,6 @@
 
 ## Module 2
 
-[Clase 1](module2/class01.md) | [Clase 2](module2/class02.md) | [Clase 3](module2/class03.md) | [Clase 4](module2/class04.md) | [Clase 5](module2/class05.md) | [Clase 6](module2/class06.md)
+[Clase 1](module2/class01.md) | [Clase 2](module2/class02.md) | [Clase 3](module2/class03.md) | [Clase 4](module2/class04.md) | [Clase 5](module2/class05.md) | [Clase 6](module2/class06.md) | [Clase 7](module2/class07.md)
+
+[Proyecto](module2/proyecto.md)
