@@ -2,7 +2,7 @@
 
 cada uno tomara un VM y reunirse como lo hizo y documentarlo
 
-VM2 Rocky 192.168.0.41
+VM2 Rocky 192.168.0.29
 
 ### DNS
 
