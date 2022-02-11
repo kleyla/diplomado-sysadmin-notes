@@ -1,6 +1,6 @@
 # Instalar un administrador de arranque
 
-### GRUB Legacy vs GRUB @
+### GRUB Legacy vs GRUB 2
 
 `lilo` linux loader ha sido remplazado pero sigue existiendo
 
