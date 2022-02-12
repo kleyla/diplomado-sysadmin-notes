@@ -2,6 +2,7 @@
 
 cada uno tomara un VM y reunirse como lo hizo y documentarlo
 
+VM1 Ubuntu 192.168.0.35
 VM2 Rocky 192.168.0.29
 
 ### DNS
@@ -34,4 +35,10 @@ Desde el servidor DNS ejecutar:
 
 ```
 dig usrv00.g01.linux
+```
+
+WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+
+```
+ssh-keygen -R AQUÍ_PONES_LA_IP_DEL_SERVIDOR
 ```
