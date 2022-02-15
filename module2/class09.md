@@ -1,3 +1,31 @@
+# LVM
+
+## Eliminar un VL
+
+- Desmontar la unidad de VL
+- Retiramos o coemtnamos el montaje del dico `/etc/fstab`
+- Eliminamos `sudo lvremove /dev/vg_O/lv1`
+- Se puede recuperar si es que no se han generado nuevos volumenes
+
+## Incrementar un Volumen logico
+
+- Desmontar la unidad LV a modificar
+- `sudo umount /mnt/disco2`
+- Verificar el tamano libre `vgdisplay`
+- Incrementar en Ubuntu `sudo lvresize -L +5Gb /dev/vg0/lv-2`
+- `e2fsck -f /dev/vg0/lv-2 && resize2fs /dev/vg0/lv-2`
+  - para particiones swap: `sudo mkswap /dev/vg0/lv-2`
+- `lvdisplay`
+
+## Reducir un VL
+
+- Desmontar la lv a modificar
+- `sudo umount /mnt/disco2`
+- Verificar el tamanho libre `vgdisplay`
+- Reducir el tamnaho del LV (ubuntu)
+- `e2fsck -f /dev/vg0/lv-2 && resize2fs /dev/vg0/lv-2 3G`
+- `lvreduce -L -2G /dev/vg0/lv-2`
+
 ## Lab Wiki
 
 Instalación DokyWiki
