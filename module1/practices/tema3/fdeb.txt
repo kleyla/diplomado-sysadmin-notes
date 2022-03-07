@@ -1,0 +1,5 @@
+apt
+apt-get
+aptitude
+apt-fast
+dpkg

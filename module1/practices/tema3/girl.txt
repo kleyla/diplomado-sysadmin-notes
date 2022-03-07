@@ -1,0 +1,6 @@
+	Product Name: Inspiron 7380
+	Family: Inspiron
+CPU(s):                              8
+Lista de la(s) CPU(s) en línea:      0-7
+CPU(s) del nodo NUMA 0:              0-7
+«Socket(s)»                          1

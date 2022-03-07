@@ -1,0 +1,4 @@
+yum
+dnf
+rpm
+zypp
