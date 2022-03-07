@@ -138,27 +138,20 @@ dnf repolist
 
 Deshabilitar SEI Linux
 
-```
-sudo nano /etc/selinux/config
-```
-
-En el archivo buscar `SELINUX=` y cambiar`SELINUX=disabled`
-
-DEshabilidat el firewall
+- Editamos `sudo nano /etc/selinux/config` En el archivo buscar `SELINUX=` y cambiar`SELINUX=disabled`
+- Reiniciamos
+- DEshabilidar el firewall `sudo systemctl stop firewalld`
+- Editamos `sudo nano /etc/yum.repos.d/webmin.repo` con:
 
 ```
-sudo systemctl stop firewalld
-sudo nano /etc/yum.repos.d/webmin.repo
-```
-
 [Webmin]
 name=Webmin Distribution Neutral
 mirrorlist=https://download.webmin.com/download/yum/mirrorlist
 enabled=1
+```
 
-```
-wget http://www.webmin.com/jcameron-key.asc
-sudo rpm --import jcameron-key.asc
-sudo yum update
-sudo dnf install webmin
-```
+- `sudo dnf install wget`
+- Descargamos `wget http://www.webmin.com/jcameron-key.asc`
+- `sudo rpm --import jcameron-key.asc`
+- `sudo yum update`
+- `sudo dnf install webmin`

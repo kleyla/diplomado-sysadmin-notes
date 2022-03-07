@@ -28,7 +28,7 @@
 
 ## Lab Wiki
 
-Instalación DokyWiki
+Instalación DokuWiki
 
 ```
 sudo apt update

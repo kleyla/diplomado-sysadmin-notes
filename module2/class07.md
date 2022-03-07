@@ -130,7 +130,7 @@ Entonces sesugiere montar en `/mnt` ya que se ha creado para ello
 
 Nota: Se puede montar el mismo disco duro en dos lugares diferentes
 
-### Ejamplo para ubuntu
+### Ejemplo para ubuntu
 
 - Empezamos a utilizar la particion de 5G
   `sudo fdisk /dev/sdb`
