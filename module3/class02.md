@@ -24,6 +24,6 @@ La **firma digital** nos da integridad y No repudio (Yo no puedo negar que yo he
 
 **Como funciona PKI**
 
-[Practica de PKI con SSL](./practices/certificate-authority.md)
+[Practica de PKI con SSL](./practices/firma-digital/certificate-authority.md)
 
 La firma digital lo que hace es encriptar el hash de tu documento con tu llave privada, el pdf se puede firmar pero no todos
