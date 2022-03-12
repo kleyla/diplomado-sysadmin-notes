@@ -1,0 +1,8 @@
+network:
+    version: 2
+    ethernets:
+        enp0s3:                                 # Private network interface
+            nameservers:
+                addresses:
+                  - 192.168.0.61                # Private IP for ns1
+                search: [ karengranadero.com ]      # DNS zone
