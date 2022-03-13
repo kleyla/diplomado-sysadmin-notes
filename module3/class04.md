@@ -12,3 +12,5 @@ Como se puede comprobar si una pagina tiene DNSSEC?
 sha1 y md5 => sha256
 
 https://www.digitalocean.com/community/tutorials/how-to-setup-dnssec-on-an-authoritative-bind-dns-server-2
+
+[Ejemplo](./practices/dnssec/pasos.md)
