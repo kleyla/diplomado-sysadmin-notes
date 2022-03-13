@@ -21,3 +21,4 @@ ns1.karengranadero.com.        IN      A        192.168.0.61
 server01.karengranadero.com.        IN      A        192.168.0.61
 ;host2.karengranadero.com.        IN      A        192.168.3.6
 www.karengranadero.com.        IN      CNAME    server01.karengranadero.com.
+karengranadero.com.        IN      MX     10    server01.karengranadero.com.

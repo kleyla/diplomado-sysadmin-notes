@@ -1,6 +1,6 @@
 acl "trusted" {
         192.168.0.61;    # my IP
-        1270.0.1;       # localhost
+        127.0.0.1;       # localhost
 };
 options {
         directory "/var/cache/bind";
