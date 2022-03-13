@@ -1,0 +1,18 @@
+#
+# yourhostname.domain
+#
+# prompt no, para q no me pregunte
+# distinguished_name la variable donde estaran los datos
+# commonName el * es para todo lo q temine con eso
+
+[ req ]
+prompt                  = no
+distinguished_name      = server_distinguished_name
+
+[ server_distinguished_name ]
+commonName             = www.karengranadero.com
+stateOrProvinceName     = Santa Cruz
+countryName            = BO
+emailAddress           = rodriguez7karen@gmail.com
+organizationName        = Karen Gueila Rodriguez Granadero
+organizationalUnitName   = Diplomado infraestructura TI
