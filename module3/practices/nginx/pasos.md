@@ -6,7 +6,7 @@
 - `cd myCA`
 - `echo '01' > serial`
 - `touch index.txt`
-- `nano caconfig.cnf`
+- `nano caconfig.cnf` [Ejemplo](../../practices/firma-digital/caconfig-cnf)
 - `export OPENSSL_CONF=/root/myCA/caconfig.cnf`
 - `openssl req -x509 -newkey rsa:4096 -out cacert.pem -outform PEM`
 - `openssl x509 -in cacert.pem -out cacert.crt`
@@ -16,7 +16,7 @@
 - `export OPENSSL_CONF=/root/myCA/caconfig.cnf`
 - `openssl ca -in reqkarengranadero.pem -out karengranadero_crt.pem`
 - `openssl rsa -in karengranadero.pem -out karengranadero.key`
-- openssl x509 -in karengranadero_crt.pem -out karengranadero.crt
+- `openssl x509 -in karengranadero_crt.pem -out karengranadero.crt`
 - Para generar el bundle, e myCA/ `cat karengranadero.crt cacert.pem >`
 
 ## Configuración SSL NGINX
@@ -32,15 +32,14 @@
 - Verificamos `nginx -t`
 - `nano /etc/nginx/sites-available/karengranadero.com` [Ejemplo](./site-available)
 
-
 - `nginx -t`
 - `systemctl restart nginx`
-- mkdir /var/www/karengranadero.com
-- cp -a /var/www/html/ /var/www/karengranadero.com
-- nano /var/www/karengranadero.com/html/index.nginx-debian.html
+- `mkdir /var/www/karengranadero.com`
+- `cp -a /var/www/html/ /var/www/karengranadero.com`
+- `nano /var/www/karengranadero.com/html/index.nginx-debian.html`
 
-- cd /etc/nginx/sites-enabled
-- sudo ln -sf ../sites-available/karengranadero.com .
+- `cd /etc/nginx/sites-enabled`
+- `sudo ln -sf ../sites-available/karengranadero.com .`
 - Pruebas `wget https://www.karengranadero.com`
-- wget https://www.karengranadero.com --no-check-certificate
-- 
+- `wget https://www.karengranadero.com --no-check-certificate`
+-
