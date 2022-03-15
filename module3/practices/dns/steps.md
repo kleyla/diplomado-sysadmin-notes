@@ -28,11 +28,12 @@
 - `dig @192.168.0.61 ns1.karengranadero.com` Nos deberia responder
 - network Creamos `sudo nano /etc/netplan/00-private-nameservers.yaml`
   - [Ejemplo](./00-private-nameservers.yaml)
+- Tambien actualizamos el por defecto en mi caso `sudo nano /etc/netplan/00-installer-config.yaml`
+  - [Ejemplo](./00-installer-config.yaml)
 - `sudo netplan try`
-- `sudo systemd-resolve --status` Si este no toma nuestro dns como el actual lo debemos cambiar en `sudo nano /etc/netplan/00-installer-config.yaml`
-- `reboot`
+- `sudo systemd-resolve --status` Deberiamos ver que nuesto DNS principal es nuestra IP
+- `sudo shutdown -r now`
 - Pruebas `dig ns1.karengranadero.com`
-- `dig www.karengranadero.com` Debe tener Answer section
--
+- `dig www.karengranadero.com` Debe tener Answer section y status NOERROR
 
-https://low-orbit.net/setup-dns-bind-on-ubuntu-linux
+Pagina guia https://low-orbit.net/setup-dns-bind-on-ubuntu-linux
