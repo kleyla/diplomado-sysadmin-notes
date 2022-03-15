@@ -1,19 +1,5 @@
 # NGINX
 
-cd /home/$USER/
-mkdir -p myCA/signedcerts
-mkdir -p myCA/private
-cd myCA
-echo '01' > serial
-touch index.txt
-nano caconfig.cnf [Ejemplo](../../practices/firma-digital/caconfig-cnf)
-export OPENSSL_CONF=/home/karen/myCA/caconfig.cnf
-openssl req -x509 -newkey rsa:4096 -out cacert.pem -outform PEM
-nano karengranadero.cnf [Ejemplo](../firma-digital/karengranadero-cnf)
-export OPENSSL_CONF=/home/karen/myCA/karengranadero.cnf
-openssl req -newkey rsa:4096 -keyout karengranadero.pem -keyform PEM -out reqkarengranadero.pem -outform PEM
-export OPENSSL_CONF=/home/karen/myCA/caconfig.cnf
-
 - `sudo apt install nginx`
 - `sudo -i`
 - `cd /etc/nginx/`
