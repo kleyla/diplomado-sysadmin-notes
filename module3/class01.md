@@ -25,3 +25,8 @@ El equipo azul defiende y el rojo busca vulnerabilidades (pentesting o etical ha
 
 Registros de sistemas y equipos
 
+<q>
+Bitacora de software: Es importante saber que software usamos en el servidor al que le damos mantenimiento
+</q>
+
+## Defensa por capas
