@@ -1,4 +1,4 @@
-# LINUX HARDENING
+# LINUX HARDENING: ENDURECIMIENTO DEL HOST
 
 ## FreeIPA
 
@@ -69,3 +69,7 @@ Todo lo q no utilicemos lo mejor es dehabilitarlo como IPV6,
 `ip -6 a` no respondera
 
 `/etc/sysctl.d` Podemos crear un archivo para deshabilitar ipv6
+
+`htop`
+
+`vi /etc/sysctl.conf`
