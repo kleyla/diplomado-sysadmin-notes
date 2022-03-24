@@ -10,7 +10,7 @@
 - Verificamos `sudo systemctl status named`
 - La configuracion de bind esta en `/etc/bind`
 - Veamos `sudo nano /etc/bind/named.conf`
-- `sudo nano /etc/bind/named.conf.options`
+- `sudo nano /etc/bind/named.conf.options` Note q debemos borrar los comentarios
   - [Ejemplo](./named.conf.options)
 - Observamos las ip privadas `nano /etc/bind/zones.rfc1918`
 - `sudo nano /etc/bind/named.conf.local`

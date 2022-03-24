@@ -1,5 +1,7 @@
 # NGINX
 
+- Agregamos nuesta IP y dominio en `sudo nano /etc/hosts` [Ejemplo](hosts)
+
 - `sudo apt install nginx`
 - `sudo -i`
 - `cd /etc/nginx/`
