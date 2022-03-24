@@ -1,6 +1,4 @@
-# Clase 8
-
-## Instalacion de FreeIPA
+# Clase 8: Instalacion de FreeIPA
 
 Realizarlo en ubuntu 16
 
