@@ -1,0 +1,30 @@
+# Last Modified: Fri Mar 25 20:48:10 2022
+#include <tunables/global>
+
+/usr/sbin/nginx {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/totem>
+
+  capability dac_override,
+  capability dac_read_search,
+  capability net_bind_service,
+  capability setgid,
+  capability setuid,
+
+  deny /var/www/html/unsafe/* r,
+
+  /etc/nginx/conf.d/* r,
+  /etc/nginx/mime.types r,
+  /etc/nginx/nginx.conf r,
+  /etc/ssl/openssl.cnf r,
+  /run/nginx.pid rw,
+  /usr/sbin/nginx mr,
+  /var/log/nginx/access.log w,
+  /var/log/nginx/error.log w,
+  /var/www/html/* r,
+  owner /etc/nginx/** r,
+  owner /etc/nginx/modules-enabled/* r,
+  owner /etc/nginx/sites-enabled/* r,
+
+}

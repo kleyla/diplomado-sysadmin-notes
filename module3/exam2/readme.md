@@ -3,8 +3,10 @@
 - `sudo apt update`
 - Cambianos de dominio `sudo hostnamectl set-hostname server01.karengranadero.com`
 - Agregamos nuesta IP y dominio en `sudo nano /etc/hosts` [Ejemplo](../exam01/nginx/hosts)
-- `/etc/sysctl.d/local.conf`
-- `/etc/security/limits.d/`
+
+- `sudo nano /etc/sysctl.d/local.conf` El contenido debe ser [contenido](./sysctl.conf.example)
+- `sudo nano /etc/security/limits.d/` [contenido](./local.conf)
+- Reiniciar la maquina luego `ulimit -a` se veran cambios
 
 - `sudo apt install -y aide`
 - `aide -v`
@@ -18,9 +20,62 @@
 - `wget https://security-metadata.canonical.com/oval/com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2`
 - `bunzip2 com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2`
 
+## ACL
+
 - `sudo adduser soporte1`
 - `sudo adduser admin`
 - `sudo adduser siso`
-- `sudo usermod -a -G sudo jorge`
-- `sudo visudo`
-- 
+
+- `sudo chage -d 0 soporte1`
+- `sudo chage -E 2022-12-31 soporte1`
+- `sudo chage -M 90 soporte1`
+- `sudo chage -l soporte1` notamos q se actualiza
+
+- `sudo chage -d 0 admin`
+- `sudo chage -E 2024-12-31 admin`
+- `sudo chage -M 90 admin`
+- `sudo usermod -a -G sudo admin`
+-
+- `sudo chage -d 0 siso`
+- `sudo chage -E 2024-12-31 siso`
+- `sudo chage -M 90 siso`
+
+- `sudo apt install acl`
+- `sudo -u siso -s` Cambia,os al user siso
+- `cd /home/siso`
+- `mkdir REPORTES`
+- `touch Reporte1.txt`
+- `sudo setfacl -m "u:soporte1:rw" /home/siso/REPORTES/`
+- `getfacl /home/siso/REPORTES/` Revisamos y vemos q cambia
+
+**Heplers**
+
+- `sudo passwd siso`
+- `cat /etc/passwd`
+
+## AppArmor
+
+- `sudo systemctl status apparmor` Tiene q estar active
+- `sudo apt install apparmor-profiles apparmor-profiles-extra`
+- `sudo apt install apparmor-easyprof apparmor-utils apparmor-notify`
+- `sudo aa-status` Verificamos
+- `sudo apt install nginx`
+- `sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.nginx`
+- `sudo aa-enforce nginx`
+- `sudo systemctl restart nginx.service`
+- `journalctl -xe` Por si nos da error
+- `sudo systemctl status nginx.service` Verificamos el estado
+- `mkdir /var/www/html/unsafe`
+- http://mi-IP/unsafe/ no dedeberiamos acceder
+
+## Firewall
+
+- `sudo systemctl enable --now ufw`
+- `sudo ufw allow ssh`
+- `sudo ufw allow 53/udp`
+- `sudo ufw allow 53/tcp`
+- `sudo ufw enable`
+- `sudo ufw allow 80/tcp`
+- `sudo ufw allow 443/tcp`
+- `sudo ufw allow 22/tcp`
+- `sudo ufw status`
