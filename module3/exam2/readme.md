@@ -19,6 +19,8 @@
 - `sudo apt install -y libopenscap8`
 - `wget https://security-metadata.canonical.com/oval/com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2`
 - `bunzip2 com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2`
+- `sudo oscap oval eval --report /root/report.html com.ubuntu.$(lsb_release -cs).usn.oval.xml`
+- Verificamos que exista `cat /root/report.html`
 
 ## ACL
 
