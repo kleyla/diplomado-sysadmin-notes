@@ -5,7 +5,7 @@
 - Agregamos nuesta IP y dominio en `sudo nano /etc/hosts` [Ejemplo](../exam01/nginx/hosts)
 
 - `sudo nano /etc/sysctl.d/local.conf` El contenido debe ser [contenido](./sysctl.conf.example)
-- `sudo nano /etc/security/limits.d/` [contenido](./local.conf)
+- `sudo nano /etc/security/limits.d/local.conf` [contenido](./local.conf)
 - Reiniciar la maquina luego `ulimit -a` se veran cambios
 
 - `sudo apt install -y aide`
@@ -19,6 +19,8 @@
 - `sudo apt install -y libopenscap8`
 - `wget https://security-metadata.canonical.com/oval/com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2`
 - `bunzip2 com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2`
+- `sudo oscap oval eval --report /root/report.html com.ubuntu.$(lsb_release -cs).usn.oval.xml`
+- Verificamos que exista `cat /root/report.html`
 
 ## ACL
 
