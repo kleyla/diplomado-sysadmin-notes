@@ -1,10 +1,10 @@
-sudo apt-get install openssh-server
-sudo systemctl enable ssh
-sudo systemctl start ssh
 
 sudo apt update
+
 sudo apt upgrade
+
 egrep -c '(vmx|svm)' /proc/cpuinfo
+
 sudo shutdown now
 
 ## Afitrion
