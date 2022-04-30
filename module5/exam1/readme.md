@@ -1,4 +1,4 @@
-# Para Linux
+# Para Linux (Ubuntu 20.04)
 
 `sudo apt update`
 
