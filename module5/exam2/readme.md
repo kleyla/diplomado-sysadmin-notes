@@ -1,4 +1,4 @@
-# Exam 2 desde linux
+# Exam 2 desde linux (Ubuntu 20.04)
 
 Las instalaciones del primer parcial las obvio
 
