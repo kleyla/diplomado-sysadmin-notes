@@ -1,0 +1,35 @@
+---
+- hosts: bionic
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Make sure that we can connect to te vm 
+      ping:
+    - name: Update an upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 8600 # One Day  
+    - name: Install docker and some dependencies
+      apt:
+        name: python3-pip, docker.io
+        state: present
+    - name: Start docker service
+      service:
+          name:  docker  
+          state: started    
+    - name: INstall docker python module
+      pip:
+        name: docker
+    - name: Create a codiad site
+      docker_container:
+        name: codiad
+        image: bitnami/codiad:latest
+        state: started
+        recreate: yes  
+        ports:
+          - "{{http_port}}:{{http_port}}"
+          - "{{https_port}}:{{https_port}}"
+        env:
+          CODIAD_USERNAME: karengranadero
+          CODIAD_PASSWORD: sesamo
